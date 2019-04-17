@@ -1,6 +1,13 @@
-const API_SEARCH = '/search/';
+const API_SEARCH = 'http://192.168.2.25:5000/search/' || '/search/';
 const resultUl = document.querySelector('.results-ul');
+const resultDiv = document.querySelector('.results');
 const searchForm = document.querySelector('.form-control-lg');
+const jumbo = document.querySelector('.jumbotron');
+
+
+window.onload = () => {
+  document.body.style.height = window.innerHeight +'px';
+}
 
 searchForm.addEventListener('submit', (event) =>{
   event.preventDefault();
@@ -15,6 +22,7 @@ searchForm.addEventListener('submit', (event) =>{
     resultUl.innerHTML = '';
     if(response.length < 1){
       const errorH4 = document.createElement('h4');
+      errorH4.className = 'error-message';
       errorH4.innerText = 'No Results';
       resultUl.appendChild(errorH4);
     }
@@ -36,8 +44,12 @@ searchForm.addEventListener('submit', (event) =>{
         resultUl.appendChild(newLi);
       };
     };
+    jumbo.classList.add('searchbar-small');
+    resultDiv.classList.remove('hidden');
+    resultDiv.style.height = window.innerHeight+'px';
   })
   .catch(err =>{
+    console.log(err);
     resultUl.innerHTML = '';
     const newH4 = document.createElement('h4');
     newH4.innerText = 'No Results';

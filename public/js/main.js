@@ -12,7 +12,6 @@ window.onload = () => {
 searchForm.addEventListener('submit', (event) =>{
   event.preventDefault();
   const searchTerm = document.querySelector('#search-input').value.toString().toLowerCase();
-  console.log(searchTerm);
 
   fetch(API_SEARCH+searchTerm)
   .then(response => {

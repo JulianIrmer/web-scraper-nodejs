@@ -1,55 +1,279 @@
+body{
+  background-color: black;
+  background-image: url('/img/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 #search-input {
   padding: 5px;
   margin-right: 10px;
   width: 500px;
+  border-radius: 5px;
 }
 
 .btn-primary{
-  height: 45px;
+  height: 38px;
   text-align: center;
-  margin: 0 auto;
+  margin-top: -8px;
+  border-radius: 5px;
 }
 
 .jumbotron{
+  width: 60%;
+  margin: 200px auto;
+  margin-bottom: 0px;
   text-align: center;
+  background-color: rgba(255,255,255,0.95);
+  border-radius: 80px;
+  box-shadow: 2px 2px 2px rgba(100,100,100,0.5);
+  transition: all 1500ms ease-in-out;
+}
+
+.jumbotron > h1{
+  font-size: 4vw;
+}
+
+@media only screen and (min-width: 1200px) {
+  .jumbotron > h1{
+    font-size: 48px;
+  }
 }
 
 .results{
-  width: 80%;
-  min-height: 500px;
-  height: auto;
-  margin: 0 auto;
+  width: 50%;
+  min-height: 580px;
+  overflow-y: scroll;
+  margin: 20px auto;
   padding: 20px;
+  transition: all 1250ms ease-in-out;
 }
 
 .results-ul{
   list-style-type: none;
   margin: 0 auto;
+  padding: 0;
 }
 
 .results-ul li{
   padding: 20px;
-  width: 50%;
-  margin: 20px auto;
+  width: 100%;
+  height: 130px;
+  margin: 15px auto;
+  box-shadow: 2px 2px 2px rgba(100,100,100,0.5);
+  opacity: 0.95;
+  animation: slide-left-right 750ms ease-in;
 }
 
 .results-ul li h4{
-  padding: 5px;
+  padding: 10px;
   text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
+.list-group-item:hover{
+  background-color: rgb(240,240,245);
+}
+
+.error-message{
+  background-color: rgba(180,0,0,0.9);
+  color: rgb(240,240,240);
+  height: 50px;
+  width: 100%;
+  margin-top: 250px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 10px;
+}
+
+/* footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  padding: 20px;
+  background-color: rgba(230,230,230, 0.9);
+  text-align: center;
+}
+
+.footer-p{
+  margin: 0 auto;
+}
+
+.footer-link{
+  color: black;
+} */
+
+
+/* HELPER CLASSES */
+
+.hidden{
+  opacity: 0;
+  display: none;
+  visibility: none;
+}
+
+.searchbar-small{
+  margin-top: 20px;
+  height: 150px;
+  padding: 10px;
+}
+
+@keyframes slide-left-right {
+  0% {
+      opacity: 0;
+      transform: translateX(-100px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@media only screen and (max-width: 1155px) {
+  .jumbotron{
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 988px) {
+  .jumbotron{
+    width: 80%;
+  }
   .results{
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 868px) {
+  .jumbotron{
     width: 90%;
   }
-  .results-ul li{
-    width: 100%;
+  .jumbotron > h1{
+    font-size: 48px;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .jumbotron{
+    width: 95%;
+  }
+  #search-input{
+    width: 400px;
+  }
+  .results{
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .jumbotron > h1{
+    font-size: 38px;
   }
   #search-input{
     width: 300px;
   }
+  .results{
+    width: 90%;
+  }
 }
 
+@media only screen and (max-width: 475px) {
+  body{
+    background-image: url('/img/bg-small.jpg');
+    background-size: cover;
+    background-position: -115px 0px;
+  }
+  .jumbotron{
+    position: fixed;
+    z-index: 200;
+    width: 100%;
+    border-radius: 10px;
+    height: 200px;
+  }
+  .jumbotron h1{
+    font-size: 34px;
+  }
+  #search-input{
+    width: 100%;
+  }
+  .btn-primary{
+    margin-top: 10px;
+  }
+  .results{
+    width: 95%;
+  }
+  .results-ul li{
+    height: 100px;
+  }
+  .results-ul li:first-child{
+    margin-top: 160px;
+  }
+  .results-ul li:last-child{
+    margin-bottom: 20px;
+  }
+  .results-ul li h4{
+    padding: 0;
+  }
+  .searchbar-small{
+    margin-top: -10px;
+    height: 180px;
+  }
+}
 
+@media only screen and (max-width: 400px) {
+  /* .jumbotron{
+    height: 270px;
+  } */
+  .jumbotron > h1{
+    font-size: 28px;
+  }
+  #search-input{
+    width: 105%;
+  }
+  .results{
+    width: 100%;
+    padding: 0;
+  }
+  .results-ul li:first-child{
+    margin-top: 210px;
+  } 
+  .searchbar-small{
+    height: 200px;
+  }
+} 
 
+@media only screen and (max-width: 400px) {
+  .jumbotron{
+    padding: 15px;
+  }
+}
 
+@media only screen and (max-width: 200px) {
+  .jumbotron{
+    padding: 15px;
+    height: 250px;
+  }
+}

@@ -1,4 +1,4 @@
-const API_SEARCH = 'http://192.168.2.25:5000/search/' || '/search/';
+const API_SEARCH = '/search/';
 const resultUl = document.querySelector('.results-ul');
 const resultDiv = document.querySelector('.results');
 const searchForm = document.querySelector('.form-control-lg');

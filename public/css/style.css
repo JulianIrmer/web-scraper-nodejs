@@ -44,7 +44,7 @@ body{
 
 .jumbotron{
   width: 60%;
-  margin: 200px auto;
+  margin: 100px auto;
   margin-bottom: 0px;
   text-align: center;
   background-color: rgba(255,255,255,0.95);
@@ -107,24 +107,6 @@ body{
   line-height: 50px;
   border-radius: 10px;
 }
-
-/* footer{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 150px;
-  padding: 20px;
-  background-color: rgba(230,230,230, 0.9);
-  text-align: center;
-}
-
-.footer-p{
-  margin: 0 auto;
-}
-
-.footer-link{
-  color: black;
-} */
 
 
 /* HELPER CLASSES */
@@ -244,9 +226,7 @@ body{
 }
 
 @media only screen and (max-width: 400px) {
-  /* .jumbotron{
-    height: 270px;
-  } */
+
   .jumbotron > h1{
     font-size: 28px;
   }
